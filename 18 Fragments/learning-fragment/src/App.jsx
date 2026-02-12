@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./App.css";
+
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
 
@@ -20,7 +20,7 @@ function App() {
 
   return (
     <>
-      <h1>Healthy Food</h1>
+      <h1 className="food-heading">Healthy Food</h1>
       {/* {emptyMessage} */}
       <ErrorMessage foodItems = {foodItems}/>
       <FoodItems foodItems = {foodItems}/>
