@@ -1,0 +1,19 @@
+.bold-700{
+    font-weight:700;
+}
+
+input{
+    width:100%;
+}
+
+.items-container{
+    text-align: left;
+}
+
+.row-space{
+    margin:10px 5px;
+}
+
+.btn-cstm{
+    width: 80px;
+}
