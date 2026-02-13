@@ -2,6 +2,8 @@ import { useState } from "react";
 
 import FoodItems from "./components/FoodItems";
 import ErrorMessage from "./components/ErrorMessage";
+import Container from "./components/Container";
+import FoodInput from "./components/FoodInput";
 
 function App() {
   let foodItems = [];
@@ -12,18 +14,27 @@ function App() {
     { id: 4, name: "Milk" },
     { id: 5, name: "Milk" },
   ];
-  // if (foodItems.length == 0) { 
+  // if (foodItems.length == 0) {
   //   return <h3>I am still hungry.</h3>;
   // }
 
-  let emptyMessage = foodItems.length ==0 ? <h3>I am still hungry.</h3>: null;
+  let emptyMessage = foodItems.length == 0 ? <h3>I am still hungry.</h3> : null;
 
   return (
     <>
-      <h1 className="food-heading">Healthy Food</h1>
-      {/* {emptyMessage} */}
-      <ErrorMessage foodItems = {foodItems}/>
-      <FoodItems foodItems = {foodItems}/>
+      <Container>
+        <h1 className="food-heading">Healthy Food</h1>
+        {/* {emptyMessage} */}
+        <ErrorMessage foodItems={foodItems} />
+        <FoodInput></FoodInput>
+        <FoodItems foodItems={foodItems} />
+      </Container>
+      {/* <Container>
+        <p>
+          Above is the list of healthy foods that are good for health and well
+          being
+        </p>
+      </Container> */}
     </>
   );
 }
