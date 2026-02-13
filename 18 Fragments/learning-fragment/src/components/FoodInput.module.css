@@ -1,6 +1,26 @@
-.foodInput{
+.inputBox {
     width: 100%;
     font-weight: 500;
-    padding: 5px;
-    margin: 10px 0px;
+    margin: 0px 10px;
 }
+
+.inputText{
+     width: 100%;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.inputButton{
+    width:53.6px;
+    margin: 0px 15px;
+}
+
+.inputContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+
+
