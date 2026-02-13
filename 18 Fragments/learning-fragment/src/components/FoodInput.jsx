@@ -8,7 +8,7 @@ const FoodInput = ({ handleOnKeyDown, handleAddButtonClick }) => {
   return (
     <div className={`${styles.inputContainer} `}>
       <div className={`${styles.inputBox} `}>
-        <input id='txtInput'
+        <input name='txtInput'
           placeholder="Enter Food Item Here"
           type="text"
           className={`${styles.inputText}`}
