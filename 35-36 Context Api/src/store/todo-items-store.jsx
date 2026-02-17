@@ -5,3 +5,9 @@ export const TodoItemsContext = createContext({
     addNewItem: ()=>{},
     deleteItem: ()=>{},
 });
+
+const TodoItemsContextProvider = () =>{
+
+}
+
+export default TodoItemsContextProvider;
