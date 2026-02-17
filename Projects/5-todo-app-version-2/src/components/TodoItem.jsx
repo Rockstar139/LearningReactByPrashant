@@ -1,5 +1,5 @@
-import styles from './TodoItem.module.css'
-
+import styles from './TodoItem.module.css';
+import { MdDelete } from "react-icons/md";
 function TodoItem({todoName, todoDate, handleDelButtonClick}) {
   return (
     <div className="container">
@@ -7,7 +7,7 @@ function TodoItem({todoName, todoDate, handleDelButtonClick}) {
         <div className="col-6">{todoName}</div>
         <div className="col-4">{todoDate}</div>
         <div className="col-2">
-          <button className={`btn btn-danger ${styles.todoButton}`} onClick={handleDelButtonClick} >Delete</button>
+          <button className={`btn btn-danger ${styles.todoButton}`} onClick={handleDelButtonClick} ><MdDelete /> Delete</button>
         </div>
       </div>
     </div>
