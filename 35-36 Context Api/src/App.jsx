@@ -4,6 +4,7 @@ import styles from "./App.module.css";
 import TodoItems from "./components/TodoItems";
 import { useState } from "react";
 import ErrorMsg from "./components/ErrorMsg";
+import { TodoItemsContext } from "./store/todo-items-store";
 
 function App() {
   let errorMessage = "Please Add Todo Items."
@@ -12,7 +13,7 @@ function App() {
     { name: "Go To College", dueDate: "4/10/2026" },
     { name: "Enjoy", dueDate: "LifeTime" },
   ]);
-  const onAddButtonClick = (txtInput, dueDate)=>{
+  const addNewItem = (txtInput, dueDate)=>{
     //this will always provide latest value as the calls are asynchronous.
     setTodoItems((currValue) =>[
       ...currValue, 
@@ -24,7 +25,7 @@ function App() {
       // setTodoItems(newTodoItems);
   }
 
-  const onDelButtonClick = (name,dueDate) =>{
+  const deleteItem = (name,dueDate) =>{
     let newTodoItems = todoItems.filter((item)=>{
       if(item.name === name && item.dueDate === dueDate){
         return false;
@@ -35,12 +36,17 @@ function App() {
   }
 
   return (
+    <TodoItemsContext.Provider value={{todoItems: todoItems,
+      addNewItem: addNewItem,
+      deleteItem: deleteItem,
+    }}>
     <center className={styles.todoContainer}>
       <AppName />
-      <AddTodo addButtonClick = {onAddButtonClick}/>
-      {todoItems.length === 0 ? <ErrorMsg errorMessage={errorMessage}></ErrorMsg>: null}
-      <TodoItems todoItems = {todoItems} handleDelButtonClick={onDelButtonClick}/>
+      <AddTodo />
+      <ErrorMsg ></ErrorMsg>
+      <TodoItems />
     </center>
+    </TodoItemsContext.Provider>
   );
 }
 
